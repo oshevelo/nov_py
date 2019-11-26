@@ -122,10 +122,9 @@ def brackets_check(inp_string):
                 stack.pop()                                         # if yes delete it (i.e. close brackets pair and empty stack)
             else:
                 sys.exit("Invalid expression. Wrong use of brackets. Exiting...") # if first bracket found is closing, raise error and exit the program
-        if len(stack) == 0:                                         # if stack is empty after all iterations
-            pass                                                    # do nothing
-        else:
-            sys.exit("Invalid expression. Wrong use of brackets. Exiting...")
+    if len(stack) == 0:                                         # if stack is empty after all iterations
+        pass                                                    # do nothing
+
 
 
 # main executable
