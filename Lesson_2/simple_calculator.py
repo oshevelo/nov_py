@@ -1,3 +1,4 @@
+__author__ = 'ME'
 # Implement calc
 # 1)
 # enter a 10
