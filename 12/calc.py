@@ -28,7 +28,7 @@ calculate(user_input)
 repeat(calculate, message)
 
 # 2.2 var
-from math import *
+# from math import *
 # 
 # def repeat(func, message):
 #     answer = ''
