@@ -7,34 +7,20 @@ operations = {
     '/': operator.truediv,
     '**': operator.pow
 }
+# priority = {'+': 1, '-': 1, '*': 2, '/': 2, '**': 3}
+priority = ['**', '*', '/', '+', '-']
 
-# operators_list = ['+', '-', '*', '/', '**']
-priority = {'+': 1, '-': 1, '*': 2, '/': 2, '**': 3}
+sequence = []
 
-numbers_stack = []
-operations_stack = []
+count = input('element count (>=2): ')
 
-count = input('enter element count: ')
+sequence.append(input('input number: '))
+for i in range(1, int(count)):
+    sequence.append(input('input operation: '))
+    sequence.append(input('input number: '))
 
-operations_stack.append(input())
-
-for i in range(2, int(count)):
-    print(operations_stack, operations_stack)
-
-    operator = input()
-
-    if operations and operations_stack[-1] > operator:
-        pass
-
-    operations_stack.append(input())
-    operations_stack.append(input())
-
-print('operator', count)
+print(sequence)
 
 
-def operation(number_left, number_right, operator):
-    return operations[operator](number_left, number_right)
-
-
-if __name__ == '__main__':
-    calculator()
+def make_operation(number_left, number_right, operation):
+    return operations[operation](number_left, number_right)
