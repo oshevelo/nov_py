@@ -1,0 +1,40 @@
+def calcul():
+    print("What do you want to do?")
+    print("Write + if you want to add numbers")
+    print("Write - if you want to subtract numbers")
+    print("Write * if you want to multiply numbers")
+    print("Write / if you want to divide numbers")
+    print("Write kvadrat it you want to get number squared")
+    action = input("So, what is your choice?")
+    if action == "+":
+       a = input("Your first number is ")
+       b = input("Your second number is ")
+       print("The final result is")
+       print(int(a) + int(b))
+    elif action == "-":
+       a = input("Your first number is ")
+       b = input("Your second number is ")
+       print("The final result is")
+       print(int(a) - int(b))
+    elif action == "*":
+       a = input("Your first number is ")
+       b = input("Your second number is ")
+       print("The final result is")
+       print(int(a) * int(b))
+    elif action == "/":
+       a = input("Your first number is ")
+       b = input("Your second number is ")
+       if b == "0":
+           print("You don't know Math")
+       else:
+           print("The final result is")
+           print(int(a) / int(b))
+    elif action == "kvardat":
+        a = input("Your first number is ")
+        b = input("And degree it ")
+        print("The final result is")
+        print(int(a) ** int(b))
+    else:
+       print("Unfortunately, we cannot do that")
+while True:
+    calcul()
