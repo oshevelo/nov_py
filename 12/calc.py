@@ -28,8 +28,7 @@ calculate(user_input)
 repeat(calculate, message)
 
 # 2.2 var
-
-# from math import *
+from math import *
 # 
 # def repeat(func, message):
 #     answer = ''
@@ -59,16 +58,19 @@ repeat(calculate, message)
 #                 tmp2 = float(tmp2)
 #                 if op == '+':
 #                     result += tmp2
-#                 if op == '-':
+#                 elif op == '-':
 #                     result -= tmp2
-#                 if op == '*':
+#                 elif op == '*':
 #                     result *= tmp2
-#                 if op == '/':
+#                 elif op == '/':
 #                     try:
 #                         result /= tmp2
 #                     except ZeroDivisionError as e:
 #                         print('Cannot divide by zero.')
 #                         return None
+#                 else:
+#                     print('Wrong operation.')
+#                     return None
 #             except Exception as exception:
 #                 print('Wrong statement is entered - this should be an integer or float value.')
 #                 return None
