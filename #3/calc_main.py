@@ -13,6 +13,6 @@ def repeat(func, message):
 
 message = 'Enter a statement to calculate:'
 user_input = input(message)
-calulation.calculate(user_input)
-repeat(calulation.calculate, message)
+calculation.calculate(user_input)
+repeat(calculation.calculate, message)
 
