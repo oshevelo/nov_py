@@ -1,4 +1,4 @@
-import calulation
+import calculation
 
 def repeat(func, message):
     answer = ''
