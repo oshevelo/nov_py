@@ -27,3 +27,9 @@ def calc(expression):
     except ZeroDivisionError:
         print('Error. Division by zero')
         return None
+    except ValueError:
+        print('Operand is not a number')
+        return None
+    except KeyError:
+        print('Operator not found')
+        return None
