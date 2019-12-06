@@ -11,8 +11,7 @@ def repeat(func, message):
             print('Wrong answer! You should enter Y or N')
             continue
 
-message = 'Enter a statement to calculate:'
+message = 'Enter a statement to calculate (for dates - dd.mm.yyyy):'
 user_input = input(message)
 calculation.calculate(user_input)
 repeat(calculation.calculate, message)
-
