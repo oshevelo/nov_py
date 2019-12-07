@@ -1,0 +1,13 @@
+﻿# define function to check that all brackets in expression entered by user are balanced
+def brackets_check(inp_string):
+    stack = []
+    for i in inp_string:                                            # loop over input
+        if i == "(":                                                # if opening bracket found
+            stack.append(i)                                         # add opening brackets to stack
+        elif i == ")":                                              # if closing bracket found
+            if len(stack) > 0 and stack[len(stack) - 1] == "(":     # check if opening bracket is already there
+                stack.pop()                                         # if yes delete it (i.e. close brackets pair and empty stack)
+            else:
+                sys.exit("Invalid expression. Wrong use of brackets. Exiting...") # if first bracket found is closing, raise error and exit the program
+    if len(stack) == 0:                                         # if stack is empty after all iterations
+        pass                                                    # do nothing

@@ -1,0 +1,22 @@
+﻿from dateutil.parser import parse
+from datetime import datetime
+import sys
+from simpleeval import simple_eval
+import check_brackets
+
+usr_input = input("Please, enter your expression")
+
+check_brackets(usr_input)
+
+try:
+  res=usr_input.split("-")
+  date1 = parse(res[0])
+  date2 = parse(res[1])
+  print(date1 - date2)
+except:
+  try:
+    strres=simple_eval(usr_input)
+    print(strres)
+  except:
+    ZeroDivisionError
+    print("Zero division is not allowed")
