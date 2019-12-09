@@ -7,7 +7,7 @@ class Environment:
 
     @property
     def enr(self):
-        if self.street and self.coutry:
+        if self.street and self.country:
             return f'I live in {self.city}, this is a {self.country}'
         else:
             return 'Bad for me('
@@ -171,7 +171,7 @@ class Discoverer(Scientist):
 
     @property
     def disc(self):
-        if self.deep_learn == 'Math'.lower() or self.dl == 'Physics':
+        if self.deep_learn == 'Math'.lower() or self.deep_learn == 'Physics':
             return f'Get my own {self.deep_learn} project'
         else:
             return 'Study study study!'
@@ -184,7 +184,7 @@ class Inventor(Discoverer):
 
     def __init__(
             self, vac, gen, name, p_num, wh, sal, res, kos, acc, cred,
-            env, deep_learn, project, ep, risk, sec
+            env, deep_learn, project, ep, risk, sec, country, city, street
     ):
         super(Inventor, self).__init__(
             acc=acc, sal=sal, gen=gen, p_num=p_num, wh=wh, name=name, street=street, cred=cred, vac=vac,
