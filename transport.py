@@ -1,4 +1,5 @@
 class Transport:
+    
     def __init__(self, passangers_num=None, speed=None):
         self.passangers_num = passangers_num
         self.speed = speed
@@ -22,7 +23,9 @@ class Transport:
     def __str__(self):
         return f'Transport with {self.passangers_num} passengers and {self.speed} km/h speeed.'
 
+    
 class AirTransport(Transport):
+    
     def __init__(self, passangers_num=None, speed=None, max_height=None):
         super().__init__(passangers_num, speed)
         self.max_height = max_height
@@ -37,6 +40,7 @@ class AirTransport(Transport):
     def __str__(self):
         return f'Aircraft with {self.passangers_num} passengers and {self.speed} km/h speeed.'
 
+    
 class Helicopter(AirTransport):
 
     def hang_in_air(self):
@@ -45,7 +49,9 @@ class Helicopter(AirTransport):
     def __str__(self):
         return f'Helicopter with {self.passangers_num} passengers and {self.speed} km/h speeed.'
 
+    
 class Airplane(AirTransport):
+    
     def __init__(self, passangers_num=None, speed=None, max_height=None):
         super().__init__(passangers_num, speed, max_height)
         self.chassis_status = None
@@ -65,6 +71,7 @@ class Airplane(AirTransport):
     def __str__(self):
         return f'Helicopter with propeller mode = {self.chassis_status}.'
 
+    
 class WaterTransport(Transport):
     def __init__(self, passangers_num=None, speed=None, max_dist_from_coast=None):
         super().__init__(passangers_num, speed)
@@ -80,7 +87,9 @@ class WaterTransport(Transport):
     def __str__(self):
         return f'A watercraft with {self.passangers_num} passengers and {self.speed} km/h speeed.'
 
+    
 class Submarine(WaterTransport):
+    
     def __init__(self, passangers_num=None, speed=None, max_dist_from_coast=None, max_depth=None):
         super().__init__(passangers_num, speed, max_dist_from_coast)
         self.max_depth = max_depth
@@ -104,7 +113,9 @@ class Submarine(WaterTransport):
     def __str__(self):
         return f'Submarine on depth = {self.current_depth} metres, while max depth = {self.max_depth}.'
 
+    
 class OilTanker(WaterTransport):
+    
     def __init__(self, passangers_num=None, speed=None, max_dist_from_coast=None, max_oil_amount=None):
         super().__init__(passangers_num, speed, max_dist_from_coast)
         self.max_oil_amount = max_oil_amount
@@ -116,7 +127,9 @@ class OilTanker(WaterTransport):
     def __str__(self):
         return f'Oil tanker with maximum possible oil amount = {self.max_oil_amount}.'
 
+    
 class SailingYacht(WaterTransport):
+    
     def __init__(self, passangers_num=None, speed=None, max_dist_from_coast=None):
         super().__init__(passangers_num, speed, max_dist_from_coast)
         self.sails_status = None
@@ -136,6 +149,7 @@ class SailingYacht(WaterTransport):
     def __str__(self):
         return f'Sailing yacht with sails mode = {self.sails_status}.'
 
+    
 class LandTransport(Transport):
 
     def move(self):
@@ -144,7 +158,9 @@ class LandTransport(Transport):
     def __str__(self):
         return f'Landcraft with {self.passangers_num} passengers and {self.speed} km/h speeed.'
 
+    
 class Train(LandTransport):
+    
     def __init__(self, passangers_num=None, speed=None, carriages_num=None):
         super().__init__(passangers_num, speed)
         self.carriages_num = carriages_num
@@ -156,7 +172,9 @@ class Train(LandTransport):
     def __str__(self):
         return f'Train with {self.carriages_num} carriages.'
 
+    
 class Truck(LandTransport):
+    
     def __init__(self, passangers_num=None, speed=None, max_load_kg=None):
         super().__init__(passangers_num, speed)
         self.max_load_kg = max_load_kg
