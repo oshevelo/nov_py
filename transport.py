@@ -73,6 +73,7 @@ class Airplane(AirTransport):
 
     
 class WaterTransport(Transport):
+    
     def __init__(self, passangers_num=None, speed=None, max_dist_from_coast=None):
         super().__init__(passangers_num, speed)
         self.max_dist_from_coast = max_dist_from_coast
