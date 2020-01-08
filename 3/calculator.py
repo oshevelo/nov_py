@@ -1,47 +1,56 @@
-from some_file import is_number, is_date
+import operator
+from datetime import datetime
+from type_check import is_number, is_date
+
+
+operations = {
+    '+': operator.add,
+    '-': operator.sub,
+    '*': operator.mul,
+    '/': operator.truediv,
+    '**': operator.pow
+}
 
 
 def main():
     print('\nits very simple calculator')
     print('supported number`s operators: +, -, *, /, **')
-    print('and date`s ')
+    print('and date`s offset: +, - ')
     print('PS enter 0 as operator to exit')
 
     while True:
-        f_operand = input('\ninput a: ')
+        first_operand = input('\ninput a: ')
+        second_operand = input('input b: ')
 
-        if is_number(f_operand):
-            print('you entered a number', float(f_operand))
-        elif is_date(f_operand):
-            print('you entered a date', is_date(f_operand))
+        if is_number(first_operand) and is_number(second_operand):
+            a = float(first_operand)
+            b = float(second_operand)
+            print('you entered a numbers {} and {}'.format(a, b))
+            operator = input('input operator: ')
+            print(number_calculate(a, b, operator))
+        elif is_date(first_operand):
+            a = is_date(first_operand)
+            print('you entered a date', a)
         else:
             print('unclear operand... try again...')
 
 
-def compute
-        # try:
-        #     f_operand = float(input('\ninput a: '))
-        # except ValueError:
-        #     print('a not numbers...')
-        #     print(is_date(a))
-        # else:
-        #     operator = input('operator: ')
-        #
-        #     if operator == '+':
-        #         print('result =', a+b)
-        #     elif operator == '-':
-        #         print('result =', a-b)
-        #     elif operator == '*':
-        #         print('result =', a*b)
-        #     elif operator == '/':
-        #         print('result =', a/b) if b else print('Error: zerro division')
-        #     elif operator == '**':
-        #         print('result =', pow(a, b))
-        #     elif operator == '0':
-        #         print('thanks for using the calculator')
-        #         break
-        #     else:
-        #         print('operator is not supported')
+def number_calculate(a, b, operator):
+    if operator == '+':
+        print('result =', a+b)
+    elif operator == '-':
+        print('result =', a-b)
+    elif operator == '*':
+        print('result =', a*b)
+    elif operator == '/':
+        print('result =', a/b) if b else print('Error: zero division')
+    elif operator == '**':
+        print('result =', pow(a, b))
+
+
+def date_calculate(a, b, operand):
+    pass
+
 
 if __name__ == '__main__':
     main()

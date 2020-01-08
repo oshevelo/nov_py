@@ -1,25 +1,24 @@
 from dateutil.parser import *
 from dateutil.relativedelta import *
 
-from datetime import datetime
-
 
 def is_date(some_str):
     try:
-        parse(some_str, dayfirst=True)
-    except Exception as e:
-        print(e)
+        date = parse(some_str, dayfirst=True)
+    except:
+        return False
     else:
-        print(type(parse(some_str, dayfirst=True)))
-        print(isinstance(parse(some_str, dayfirst=True), datetime))
-        return parse(some_str, dayfirst=True)
+        return date
+        # print(type(parse(some_str, dayfirst=True)))
+
 
 def is_number(some_str):
     try:
         float(some_str)
     except:
         return False
-    else: return True
+    else:
+        return True
 
 
 
