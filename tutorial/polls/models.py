@@ -13,7 +13,7 @@ class Question(models.Model):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
     def __str__(self):
-        return '{}'.format(self.question_text)
+        return '{} Question: {}'.format(self.id, self.question_text)
 
 
 class Choice(models.Model):
@@ -22,4 +22,4 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
 
     def __str__(self):
-        return 'Question: {}, Choice: {}, Votes: {}'.format(self.question, self.choice_text, self.votes)
+        return '{} Question: {}, Choice: {}, Votes: {}'.format(self.id, self.question, self.choice_text, self.votes)
