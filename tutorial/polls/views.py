@@ -1,9 +1,9 @@
 from django.http import HttpResponse
-from .models import Choice, Question
-
-from rest_framework import generics
-from .serializers import ChoiceSerializer, QuestionSerializer
 from django.shortcuts import get_object_or_404
+from rest_framework import generics
+
+from .models import Choice, Question
+from .serializers import ChoiceSerializer, QuestionSerializer
 
 
 def index(request):

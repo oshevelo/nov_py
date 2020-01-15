@@ -9,7 +9,7 @@ class Question(models.Model):
     question_desc = models.CharField(max_length=255, default='')
     pub_date = models.DateTimeField('date published')
 
-    def was_published_recently(self):\
+    def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
     def __str__(self):
