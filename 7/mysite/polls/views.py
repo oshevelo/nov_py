@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Question
+from .models import Question, Choice
 from rest_framework import generics
-from .serializers import QuestionSerializer
+from .serializers import QuestionSerializer, ChoiceSerializer
 
 # Create your views here.
 
@@ -36,4 +36,17 @@ class QuestionDetail(generics.RetrieveUpdateDestroyAPIView):
 
     def get_object(self):
         obj = get_object_or_404(Question, pk=self.kwargs.get('question_id'))
+        return obj
+
+
+class ChoiceList(generics.ListCreateAPIView):
+    queryset = Choice.objects.all()
+    serializer_class = ChoiceSerializer
+
+
+class ChoiceDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = ChoiceSerializer
+
+    def get_object(self):
+        obj = get_object_or_404(Choice, pk=self.kwargs.get('choice_id'))
         return obj
