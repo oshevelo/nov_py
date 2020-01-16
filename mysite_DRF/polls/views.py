@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.http import Http404
 from polls.models import Question
+from polls.models import Choice
 
 from rest_framework import generics
 from polls.serializers import QuestionSerializer
@@ -27,5 +28,18 @@ class QuestionDetail(generics.RetrieveUpdateDestroyAPIView):
 
     def get_object(self):
         obj = get_object_or_404(Question, pk=self.kwargs.get('question_id'))
+        return obj
+
+class ChoiceList(generics.ListCreateAPIView):
+    queryset=Choice.objects.all()
+    serialier_class=ChoiceSerializer
+
+
+class ChoiceDetails(generics.RetrieveUpdateDestroyAPIView):
+
+    serializer_class=ChoiceSerializer
+
+    def get_object(self):
+        obj = get_objects_or_404(Choice, pk=self.kwargs.get('choice_id'))
         return obj
 
